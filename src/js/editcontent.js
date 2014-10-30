@@ -1,10 +1,8 @@
 if (typeof addEventListener === 'function' && typeof document.body.contentEditable === 'string') {
-    (function () {
+    (function (doc, body) {
         'use strict';
-        var doc, body, mkControls, mkStyles, btn, toggleContentEditable, editOn, editOff;
 
-        doc  = document;
-        body = doc.body;
+        var mkControls, mkStyles, toggleContentEditable, editOn, editOff, btn;
 
         mkControls = function () {
             var control_container = doc.createElement('div'), btn_txt;
@@ -57,5 +55,5 @@ if (typeof addEventListener === 'function' && typeof document.body.contentEditab
 
         mkStyles();
         mkControls();
-    }());
+    }(document, document.body));
 }
